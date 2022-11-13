@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from './Button'
 import './Navbar.css'
@@ -18,6 +18,10 @@ function Navbar() {
       setButton(true);
     }
   }
+  // loads button only once so it does not reappear
+  useEffect(() => {
+    showButton();
+  }, []);
   // when screen is re-sized button should be shown
   window.addEventListener('resize', showButton);
 
