@@ -1,16 +1,25 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Button from './Button'
 
 function Navbar() {
   const [click, setClick] = useState(false);
+  const [button, setButton] = useState(true);
 
-  const handleClick = () => {
-    setClick(!click);
-  };
+  const handleClick = () => setClick(!click);
   // false closes the menu
-  const closeMobileMenu = () => {
-    setClick(false);
-  };
+  const closeMobileMenu = () => setClick(false);
+  // function to display button or remove depending on
+  const showButton = () => {
+    if (window.innerWidth <= 960) {
+      setButton(false);
+    } else {
+      setButton(true);
+    }
+  }
+  // when screen is re-sized button should be shown
+  window.addEventListener('resize', showButton);
+
   return (
     <>
       <nav className="navbar">
@@ -51,7 +60,7 @@ function Navbar() {
           </ul>
           {/* && (if true return => ...) */}
           {/* if btn--outline is not set it will use btn--primary because of function set above */}
-          {/* {button && <Button buttonStyle='btn--outline'>Sign Up</Button>} */}
+          {button && <Button buttonStyle='btn--outline'>Sign Up</Button>}
         </div>
       </nav>
     </>

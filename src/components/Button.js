@@ -1,11 +1,9 @@
 import React from "react";
 import "./Button.css";
 import { Link } from "react-router-dom";
-
 // automatic css styling
-const STYLES = ["btn--primary", "btn--outline"];
-
-const SIZES = ["btn--medium", "btn--large"];
+const STYLES = ['btn--primary', 'btn--outline'];
+const SIZES = ['btn--medium', 'btn--large'];
 
 export const Button = ({
   children,
@@ -25,13 +23,12 @@ export const Button = ({
     <Link to="/sign-up" className="btn-mobile">
       <button
         className={`btn ${checkButtonStyle} ${checkButtonSize}`}
-        onClick={onclick}
+        onClick={onClick}
         type={type}
       >
         {/* whatever is passed below will be displayed in the button */}
         {children}
       </button>
-      <Button>Get Started</Button>
     </Link>
   );
 };
