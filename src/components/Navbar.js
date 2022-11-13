@@ -7,19 +7,53 @@ function Navbar() {
   const handleClick = () => {
     setClick(!click);
   };
+  // false closes the menu
+  const closeMobileMenu = () => {
+    setClick(false);
+  };
   return (
     <>
-    <nav className="navbar">
-      <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
-          LOGO <i className="fab fa-typo3" />
-        </Link>
-        <div className="menu-icon" onClick={handleClick}>
-          {/* set the hamburger menu here */}
-          <i className={click ? "fas fa-times" : "fas fa-bars"} />
+      <nav className="navbar">
+        <div className="navbar-container">
+          <Link to="/" className="navbar-logo">
+            LOGO <i className="fab fa-typo3" />
+          </Link>
+          <div className="menu-icon" onClick={handleClick}>
+            {/* hamburger menu, opens on click. */}
+            <i className={click ? "fas fa-times" : "fas fa-bars"} />
+          </div>
+          {/* when clicked nav menu disappears */}
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li className="nav-item">
+              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                Services
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/" className="nav-links" onClick={closeMobileMenu}>
+                Products
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/sign-up"
+                className="nav-links"
+                onClick={closeMobileMenu}
+              >
+                Sign up
+              </Link>
+            </li>
+          </ul>
+          {/* && (if true return => ...) */}
+          {/* if btn--outline is not set it will use btn--primary because of function set above */}
+          {/* {button && <Button buttonStyle='btn--outline'>Sign Up</Button>} */}
         </div>
-      </div>
-    </nav>
+      </nav>
     </>
   );
 }
