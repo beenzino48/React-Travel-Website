@@ -65,7 +65,7 @@ function Footer() {
               <i class='fab fa-typo3' />
             </Link>
           </div>
-          <small class='website-rights'>MyTrip © 2022</small>
+          <small class='website-rights'>MyTrip © 2022 built by <bold>Hamish Liu</bold> </small>
           <div class='social-icons'>
             <Link
               class='social-icon-link facebook'
