@@ -30,7 +30,7 @@ function Navbar() {
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            LOGO
+            MyTrip
             <i className="fab fa-typo3" />
           </Link>
           <div className="menu-icon" onClick={handleClick}>
@@ -54,19 +54,10 @@ function Navbar() {
                 Products
               </Link>
             </li>
-
-            <li>
-              <Link
-                to="/sign-up"
-                className="nav-links"
-                onClick={closeMobileMenu}>
-                Sign up
-              </Link>
-            </li>
           </ul>
           {/* && (if true return => ...) */}
           {/* if btn--outline is not set it will use btn--primary because of function set above */}
-          {button && <Button buttonStyle='btn--outline'>Sign Up</Button>}
+          {button && <Button buttonStyle='btn--medium'>Sign Up</Button>}
         </div>
       </nav>
     </>

@@ -25,7 +25,7 @@ function Cards() {
           <ul className="cards__items">
             <CardItem
             src="/images/img-6.jpg"
-            text="Travel through the metropolis which is Tokyo city"
+            text="Travel through Tokyo city"
             label='Luxury'
             path='/services'
             />
@@ -37,7 +37,7 @@ function Cards() {
             />
                         <CardItem
             src="/images/img-7.jpg"
-            text="Climb mountains and see views that no one has ever seen"
+            text="Climb breathtaking mountains"
             label='Adventure'
             path='/services'
             />
